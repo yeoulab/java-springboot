@@ -5,16 +5,18 @@ import com.web.yeoulab.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
 import java.util.stream.LongStream;
 
 @SpringBootApplication
-public class MainApplication {
+public class MainApplication extends SpringBootServletInitializer {
 
     public static void main(String[] arg){
 
         SpringApplication.run(MainApplication.class, arg);
+        System.out.println("Main Application Start");
     }
 
     @Bean
