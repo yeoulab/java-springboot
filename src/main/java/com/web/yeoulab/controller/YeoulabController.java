@@ -22,12 +22,16 @@ public class YeoulabController {
 
     @GetMapping
     public List<Customer> findAll(){
+        List<Customer> cList = customerRepository.findAll();
         return customerRepository.findAll();
     }
 
     @GetMapping(path = {"/{id}"})
-    public ResponseEntity<Customer> findById(@PathVariable long id){
-        return customerRepository.findById(id).map(record -> ResponseEntity.ok().body(record)).orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<Customer> findById(@PathVariable Long id){
+        System.out.println("id : "+id);
+        return customerRepository.findById(id)
+                .map(record -> ResponseEntity.ok().body(record))
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping

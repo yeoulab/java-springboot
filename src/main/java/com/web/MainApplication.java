@@ -13,6 +13,7 @@ import java.util.stream.LongStream;
 public class MainApplication {
 
     public static void main(String[] arg){
+
         SpringApplication.run(MainApplication.class, arg);
     }
 
