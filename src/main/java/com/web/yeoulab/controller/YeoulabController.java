@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping({"/yeoulab"})
+@RequestMapping({"/test"})
 public class YeoulabController {
 
     @Autowired
@@ -20,8 +21,15 @@ public class YeoulabController {
         return "Here is Yeoulab's home";
     }
 
-    @GetMapping
-    public List<Customer> findAll(){
+    @GetMapping(path = {"/thread"})
+    public List<Customer> findAll() throws InterruptedException {
+        Date date = new Date();
+        long time = date.getTime();
+        System.out.println("@@@ find All Function Start : " + time);
+        Thread.sleep(10000);
+        Date date2 = new Date();
+        long time2 = date2.getTime();
+        System.out.println("@@@ After Thread Sleep @@@ : " +time2);
         List<Customer> cList = customerRepository.findAll();
         return customerRepository.findAll();
     }
