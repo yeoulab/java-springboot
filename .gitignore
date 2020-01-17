@@ -1,0 +1,12 @@
+### Java template
+*.class
+
+### Java Archive Files
+### these are not included..
+
+### Intellij Project files
+.idea
+*.iml
+
+## Gradle
+.gradle

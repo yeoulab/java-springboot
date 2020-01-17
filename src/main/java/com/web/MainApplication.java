@@ -18,7 +18,7 @@ public class MainApplication extends SpringBootServletInitializer {
         SpringApplication.run(MainApplication.class, arg);
         System.out.println("Main Application Start");
     }
-
+/*
     @Bean
     CommandLineRunner init(CustomerRepository customerRepository){
         return args -> {
@@ -32,5 +32,5 @@ public class MainApplication extends SpringBootServletInitializer {
                     return c;
             }).map(v -> customerRepository.save(v)).forEach(System.out::println);
         };
-    }
+    } */
 }
